@@ -2,7 +2,7 @@
 /**
  * The template for displaying a grid of featured items.
  *
- * @package wrmc
+ * @package rhapsody
  */
 
 $ids = get_field('featured_item', false, false);

@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package wrmc
+ * @package rhapsody
  */
 
 /**
@@ -14,7 +14,7 @@
  *
  * @return array
  */
-function wrmc_body_classes($classes) {
+function rhapsody_body_classes($classes) {
   // Adds a class of group-blog to blogs with more than 1 published author.
   if (is_multi_author()) {
     $classes[] = 'group-blog';
@@ -23,7 +23,7 @@ function wrmc_body_classes($classes) {
   return $classes;
 }
 
-add_filter('body_class', 'wrmc_body_classes');
+add_filter('body_class', 'rhapsody_body_classes');
 
 if (version_compare($GLOBALS['wp_version'], '4.1', '<')) :
   /**
@@ -34,7 +34,7 @@ if (version_compare($GLOBALS['wp_version'], '4.1', '<')) :
    *
    * @return string The filtered title.
    */
-  function wrmc_wp_title($title, $sep) {
+  function rhapsody_wp_title($title, $sep) {
     if (is_feed()) {
       return $title;
     }
@@ -52,13 +52,13 @@ if (version_compare($GLOBALS['wp_version'], '4.1', '<')) :
 
     // Add a page number if necessary:
     if (($paged >= 2 || $page >= 2) && !is_404()) {
-      $title .= " $sep " . sprintf(__('Page %s', 'wrmc'), max($paged, $page));
+      $title .= " $sep " . sprintf(__('Page %s', 'rhapsody'), max($paged, $page));
     }
 
     return $title;
   }
 
-  add_filter('wp_title', 'wrmc_wp_title', 10, 2);
+  add_filter('wp_title', 'rhapsody_wp_title', 10, 2);
 
   /**
    * Title shim for sites older than WordPress 4.1.
@@ -66,11 +66,11 @@ if (version_compare($GLOBALS['wp_version'], '4.1', '<')) :
    * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
    * @todo Remove this function when WordPress 4.3 is released.
    */
-  function wrmc_render_title() {
+  function rhapsody_render_title() {
     ?>
     <title><?php wp_title('|', TRUE, 'right'); ?></title>
   <?php
   }
 
-  add_action('wp_head', 'wrmc_render_title');
+  add_action('wp_head', 'rhapsody_render_title');
 endif;

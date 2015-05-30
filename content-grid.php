@@ -2,7 +2,7 @@
 /**
  * The template used for displaying a grid
  *
- * @package wrmc
+ * @package rhapsody
  */
 ?>
 

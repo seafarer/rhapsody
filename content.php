@@ -1,6 +1,6 @@
 <?php
 /**
- * @package wrmc
+ * @package rhapsody
  */
 ?>
 
@@ -10,7 +10,7 @@
 
     <?php if ('post' == get_post_type()) : ?>
       <div class="entry-meta">
-        <?php wrmc_posted_on(); ?>
+        <?php rhapsody_posted_on(); ?>
       </div><!-- .entry-meta -->
     <?php endif; ?>
   </header>
@@ -20,7 +20,7 @@
 <!--    --><?php
 //    /* translators: %s: Name of current post */
 //    the_content(sprintf(
-//      __('Continue reading %s <span class="meta-nav">&rarr;</span>', 'wrmc'),
+//      __('Continue reading %s <span class="meta-nav">&rarr;</span>', 'rhapsody'),
 //      the_title('<span class="screen-reader-text">"', '"</span>', FALSE)
 //    ));
 //    ?>
@@ -29,7 +29,7 @@
 
     <?php
     wp_link_pages(array(
-      'before' => '<div class="page-links">' . __('Pages:', 'wrmc'),
+      'before' => '<div class="page-links">' . __('Pages:', 'rhapsody'),
       'after'  => '</div>',
     ));
     ?>
@@ -37,7 +37,7 @@
   <!-- .entry-content -->
 
   <footer class="entry-footer">
-    <?php wrmc_entry_footer(); ?>
+    <?php rhapsody_entry_footer(); ?>
   </footer>
   <!-- .entry-footer -->
 </article><!-- #post-## -->

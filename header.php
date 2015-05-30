@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package wrmc
+ * @package rhapsody
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -34,7 +34,7 @@
     <?php if(is_front_page()) : ?>
     <section id="hero-video" class="hero-video hero hero-current">
       <?php if (!wp_is_mobile() && (get_field('webm_video') || get_field('mp4_video'))) { ?>
-        <video width='100%' id='wrmc-video' autoplay loop autobuffer preload='auto' poster='data:image/gif,AAAA'>
+        <video width='100%' id='rhapsody-video' autoplay loop autobuffer preload='auto' poster='data:image/gif,AAAA'>
           <?php if(get_field('webm_video')) : ?>
             <source src='<?php the_field('webm_video');  ?>' type='video/webm'>
           <?php endif; ?>

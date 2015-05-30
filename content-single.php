@@ -1,6 +1,6 @@
 <?php
 /**
- * @package wrmc
+ * @package rhapsody
  */
 ?>
 
@@ -9,7 +9,7 @@
     <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 
     <div class="entry-meta">
-      <?php wrmc_posted_on(); ?>
+      <?php rhapsody_posted_on(); ?>
     </div>
     <!-- .entry-meta -->
   </header>
@@ -19,7 +19,7 @@
     <?php the_content(); ?>
     <?php
     wp_link_pages(array(
-      'before' => '<div class="page-links">' . __('Pages:', 'wrmc'),
+      'before' => '<div class="page-links">' . __('Pages:', 'rhapsody'),
       'after'  => '</div>',
     ));
     ?>
@@ -27,7 +27,7 @@
   <!-- .entry-content -->
 
   <footer class="entry-footer">
-    <?php wrmc_entry_footer(); ?>
+    <?php rhapsody_entry_footer(); ?>
   </footer>
   <!-- .entry-footer -->
 </article><!-- #post-## -->

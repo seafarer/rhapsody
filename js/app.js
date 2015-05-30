@@ -42,8 +42,8 @@ $(function() {
   var resorts = $('#resorts'),
       mountains = $('#mountains'),
       cities = $('#cities'),
-      video = $('#wrmc-video'),
-      videoEl = document.getElementById('wrmc-video'),
+      video = $('#rhapsody-video'),
+      videoEl = document.getElementById('rhapsody-video'),
       header = $('#masthead'),
       section = $('.hero-block'),
       title = $('.hero-title');

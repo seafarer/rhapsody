@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package wrmc
+ * @package rhapsody
  */
 ?>
 
@@ -16,7 +16,7 @@
     <?php the_content(); ?>
     <?php
     wp_link_pages(array(
-      'before' => '<div class="page-links">' . __('Pages:', 'wrmc'),
+      'before' => '<div class="page-links">' . __('Pages:', 'rhapsody'),
       'after'  => '</div>',
     ));
     ?>

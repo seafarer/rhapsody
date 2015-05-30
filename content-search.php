@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package wrmc
+ * @package rhapsody
  */
 ?>
 
@@ -14,7 +14,7 @@
 
     <?php if ('post' == get_post_type()) : ?>
       <div class="entry-meta">
-        <?php wrmc_posted_on(); ?>
+        <?php rhapsody_posted_on(); ?>
       </div><!-- .entry-meta -->
     <?php endif; ?>
   </header>
@@ -26,7 +26,7 @@
   <!-- .entry-summary -->
 
   <footer class="entry-footer">
-    <?php wrmc_entry_footer(); ?>
+    <?php rhapsody_entry_footer(); ?>
   </footer>
   <!-- .entry-footer -->
 </article><!-- #post-## -->

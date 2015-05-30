@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package wrmc
+ * @package rhapsody
  */
 
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
 
       <header class="page-header">
         <h1
-          class="page-title"><?php printf(__('Search Results for: %s', 'wrmc'), '<span>' . get_search_query() . '</span>'); ?></h1>
+          class="page-title"><?php printf(__('Search Results for: %s', 'rhapsody'), '<span>' . get_search_query() . '</span>'); ?></h1>
       </header><!-- .page-header -->
 
       <?php /* Start the Loop */ ?>

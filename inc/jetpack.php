@@ -3,18 +3,18 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package wrmc
+ * @package rhapsody
  */
 
 /**
  * Add theme support for Infinite Scroll.
  * See: http://jetpack.me/support/infinite-scroll/
  */
-function wrmc_jetpack_setup() {
+function rhapsody_jetpack_setup() {
   add_theme_support('infinite-scroll', array(
     'container' => 'main',
     'footer'    => 'page',
   ));
 }
 
-add_action('after_setup_theme', 'wrmc_jetpack_setup');
+add_action('after_setup_theme', 'rhapsody_jetpack_setup');

@@ -1,8 +1,8 @@
 <?php
 /**
- * wrmc functions and definitions
+ * rhapsody functions and definitions
  *
- * @package wrmc
+ * @package rhapsody
  */
 
 /**
@@ -12,7 +12,7 @@ if (!isset($content_width)) {
   $content_width = 640; /* pixels */
 }
 
-if (!function_exists('wrmc_setup')) :
+if (!function_exists('rhapsody_setup')) :
   /**
    * Sets up theme defaults and registers support for various WordPress features.
    *
@@ -20,15 +20,15 @@ if (!function_exists('wrmc_setup')) :
    * runs before the init hook. The init hook is too late for some features, such
    * as indicating support for post thumbnails.
    */
-  function wrmc_setup() {
+  function rhapsody_setup() {
 
     /*
      * Make theme available for translation.
      * Translations can be filed in the /languages/ directory.
-     * If you're building a theme based on wrmc, use a find and replace
-     * to change 'wrmc' to the name of your theme in all the template files
+     * If you're building a theme based on rhapsody, use a find and replace
+     * to change 'rhapsody' to the name of your theme in all the template files
      */
-    load_theme_textdomain('wrmc', get_template_directory() . '/languages');
+    load_theme_textdomain('rhapsody', get_template_directory() . '/languages');
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support('automatic-feed-links');
@@ -50,8 +50,8 @@ if (!function_exists('wrmc_setup')) :
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(array(
-      'primary' => __('Primary Menu', 'wrmc'),
-      'footer' => __('Footer Menu', 'wrmc'),
+      'primary' => __('Primary Menu', 'rhapsody'),
+      'footer' => __('Footer Menu', 'rhapsody'),
     ));
 
     /*
@@ -66,17 +66,17 @@ if (!function_exists('wrmc_setup')) :
       'caption',
     ));
   }
-endif; // wrmc_setup
-add_action('after_setup_theme', 'wrmc_setup');
+endif; // rhapsody_setup
+add_action('after_setup_theme', 'rhapsody_setup');
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function wrmc_widgets_init() {
+function rhapsody_widgets_init() {
   register_sidebar(array(
-    'name'          => __('Sidebar', 'wrmc'),
+    'name'          => __('Sidebar', 'rhapsody'),
     'id'            => 'sidebar-1',
     'description'   => '',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -85,34 +85,34 @@ function wrmc_widgets_init() {
     'after_title'   => '</h1>',
   ));
 }
-add_action('widgets_init', 'wrmc_widgets_init');
+add_action('widgets_init', 'rhapsody_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function wrmc_scripts() {
-  wp_enqueue_style('wrmc-style', get_stylesheet_uri());
+function rhapsody_scripts() {
+  wp_enqueue_style('rhapsody-style', get_stylesheet_uri());
 
-  if (!is_admin()) add_action("wp_enqueue_scripts", "wrmc_jquery_enqueue", 11);
-  function wrmc_jquery_enqueue() {
+  if (!is_admin()) add_action("wp_enqueue_scripts", "rhapsody_jquery_enqueue", 11);
+  function rhapsody_jquery_enqueue() {
     wp_deregister_script('jquery');
     wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", false, null);
     wp_enqueue_script('jquery');
   }
 
-  wp_enqueue_script('wrmc-modernizr', get_template_directory_uri() . '/js/vendor/modernizr.custom.js', array(),'', false );
-  wp_enqueue_script('wrmc-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', TRUE);
-  wp_enqueue_script('wrmc-sticky', get_template_directory_uri() . '/js/vendor/jquery.sticky-kit.min.js', array(), '1.1.2', TRUE);
-  wp_enqueue_script('wrmc-isotope', get_template_directory_uri() . '/js/vendor/isotope.pkgd.min.js', array(), '2.2.0', TRUE);
-  wp_enqueue_script('wrmc-slick', get_template_directory_uri() . '/js/vendor/slick.min.js', array(), '1.5.2', TRUE);
-  wp_enqueue_script('wrmc-app', get_template_directory_uri() . '/js/app.js', array(), '1.0', TRUE);
+  wp_enqueue_script('rhapsody-modernizr', get_template_directory_uri() . '/js/vendor/modernizr.custom.js', array(),'', false );
+  wp_enqueue_script('rhapsody-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', TRUE);
+  wp_enqueue_script('rhapsody-sticky', get_template_directory_uri() . '/js/vendor/jquery.sticky-kit.min.js', array(), '1.1.2', TRUE);
+  wp_enqueue_script('rhapsody-isotope', get_template_directory_uri() . '/js/vendor/isotope.pkgd.min.js', array(), '2.2.0', TRUE);
+  wp_enqueue_script('rhapsody-slick', get_template_directory_uri() . '/js/vendor/slick.min.js', array(), '1.5.2', TRUE);
+  wp_enqueue_script('rhapsody-app', get_template_directory_uri() . '/js/app.js', array(), '1.0', TRUE);
 
   if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
 }
 
-add_action('wp_enqueue_scripts', 'wrmc_scripts');
+add_action('wp_enqueue_scripts', 'rhapsody_scripts');
 
 /**
  * Implement the Custom Header feature.
