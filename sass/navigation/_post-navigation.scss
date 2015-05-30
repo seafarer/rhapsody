@@ -1,0 +1,54 @@
+.entry-header.wide {
+
+  .post-navigation {
+
+    .nav-previous,
+    .nav-next {
+      position: absolute;
+      z-index: 3;
+      top: 44%;
+      width: $arrow-width;
+
+      @include respond-to(large) {
+        width: $arrow-width / 2;
+      }
+
+      a {
+        width: $arrow-width;
+        height: $arrow-height;
+        @include hide-text;
+        border: solid #fff;
+        border-width: 0px 0px 1px 1px;
+
+        @include respond-to(large) {
+          width: $arrow-width / 2;
+          height: $arrow-height / 2;
+        }
+      }
+    }
+
+    .nav-next {
+      right: em(32);
+
+      a {
+        transform: matrix(-0.7071, -0.7071, 0.7071, -0.7071, 0, 0);
+      }
+
+      @include respond-to(large) {
+        right: em(16);
+      }
+    }
+
+    .nav-previous {
+      left: em(32);
+
+      a {
+        transform: matrix(0.7071,0.7071,-0.7071,0.7071,0,0);
+      }
+
+      @include respond-to(large) {
+        left: em(16);
+      }
+    }
+  }
+}

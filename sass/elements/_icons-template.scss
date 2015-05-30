@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "icons";
+  src: url('fonts/icons/icons.eot');
+  src: url('fonts/icons/icons.eot?#iefix') format('eot'),
+  url('fonts/icons/icons.woff') format('woff'),
+  url('fonts/icons/icons.ttf') format('truetype'),
+  url('fonts/icons/icons.svg#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: "icons";
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.icon-2x { font-size: 2em; }
+.icon-3x { font-size: 3em; }
+.icon-4x { font-size: 4em; }
+.icon-5x { font-size: 5em; }
+.icon-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+.icon-chevron-thin-left:before { content: "\E009" }
+.icon-chevron-thin-right:before { content: "\E00A" }
+.icon-cancel:before { content: "\E001" }
+.icon-menu:before { content: "\E002" }
+.icon-facebook:before { content: "\E003" }
+.icon-google-plus:before { content: "\E004" }
+.icon-instagram:before { content: "\E005" }
+.icon-linkedin:before { content: "\E006" }
+.icon-pinterest:before { content: "\E007" }
+.icon-twitter:before { content: "\E008" }

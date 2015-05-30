@@ -1,0 +1,44 @@
+$small-screen: 480px;
+$medium-screen: 768px;
+$large-screen: 960px;
+$huge-screen: 1232px;
+
+$breakpoints: (
+  'small': ( max-width: $small-screen ),
+  'small-up': ( min-width: $small-screen ),
+  'medium': ( max-width: $medium-screen ),
+  'medium-up': ( min-width: $medium-screen ),
+  'large': ( max-width: $large-screen ),
+  'large-up': ( min-width: $large-screen ),
+  'huge': ( max-width: $huge-screen ),
+  'short': ( max-height: 800px ),
+  'tall': ( min-height: 801px )
+);
+
+@mixin respond-to($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin container {
+  max-width: $max-width;
+  width: 100%;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  padding: 0 em(16);
+  @include clearfix;
+
+}

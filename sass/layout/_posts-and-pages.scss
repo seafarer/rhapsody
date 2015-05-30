@@ -1,0 +1,316 @@
+
+.site-main {
+  padding: 0 0 em(80);
+
+  &.team {
+    padding: 0 0 em(40);
+  }
+
+  #homepage-content &,
+  &.landing-page {
+    @include respond-to(large) {
+      padding: 0 em(20) em(30);
+    }  
+  }
+
+  &.row {
+    padding-bottom: em(80);
+  }
+}
+
+.row {
+  @include container();
+}
+
+.bkgd-wrap {
+  padding-top: 3em;
+  background: url(images/bkgd-tile.jpg);
+
+  @include respond-to(small) {
+    padding-top: 1em;
+  }
+}
+
+.with-nav {
+  .row {
+    max-width: em(928);
+    margin-top: 0;
+  }
+}
+
+.entry-header {
+  margin-top: em(80);
+  position: relative;
+
+  @include respond-to(large) {
+    margin-top: em(40);
+  }
+}
+
+.entry-header.wide {
+  position: relative;
+  width: 100%; 
+  margin-top: 0;
+  max-height: 650px;
+
+  @include respond-to(small) {
+    min-height: 170px;
+    overflow-x: hidden;
+  }
+
+  .entry-title {
+    text-align: center;
+    width: 76%;
+    z-index: 2;
+    line-height: .8;
+    @include font-size(100);
+    opacity: 0.6;
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    margin: 0 auto;
+
+    @include respond-to(huge) {
+      top: 65%;
+    }
+
+    @include respond-to(short) {
+      top: 48%;
+    }
+
+    @include respond-to(large) {
+      top: 50%;
+      margin-top: -38px; // half the font size
+      @include font-size(76);
+    }
+
+    @include respond-to(medium) {
+      @include font-size(50);
+    }
+
+    @include respond-to(small) {
+      @include font-size(35);
+      margin-top: -20px; // half the font size
+    }
+  }
+
+  .entry-title.no-images {
+    position: static;
+    margin: em(20) auto;
+  }
+
+  img {
+    position: relative;
+    z-index: 1;
+    max-width: none;
+    width: 100%;
+    
+    @include respond-to(small) {
+      width: 150%;
+      max-width: none;
+      margin-left: -25%;
+    }
+  }
+}
+
+.title-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.entry-content,
+.entry-footer,
+.comments-area {
+  @include center-block;
+  max-width: em(928);
+}
+
+.column-group {
+  @include clearfix;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding-right: em(20);
+
+  &:nth-child(2n+2) {
+    padding-left: em(20);
+    padding-right: 0;
+
+    @include respond-to(medium) {
+      padding: 0;
+    }
+  }
+
+  @include respond-to(medium) {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1.5em;
+  }
+}
+
+.with-nav .entry-content {
+  width: 75%;
+  float: right;
+
+  @include respond-to(medium) {
+    width: 100%;
+  }
+}
+
+.featured .entry-content {
+  max-width: em(640);
+}
+
+.subnav {
+  float: left;
+  width: 25%;
+  padding-right: 2em;
+
+  
+  
+  @include respond-to(medium) {
+    width: 100%;
+  }
+}
+
+.destination-contact {
+  color: #ddd;
+  border: 3px solid #ddd;
+  padding: 1em 2em;
+  @include clearfix;
+
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+}
+
+.contact-details {
+  width: 50%;
+  float: left;
+}
+
+.sales-contact {
+  width: 50%;
+  float: right;
+  margin-bottom: 1em;
+
+  @include respond-to(small) {
+    width: 100%;
+  }  
+}
+
+.contact-item {
+  margin-bottom: 1em;
+}
+
+.headshot {
+  float: right;
+  margin: 0 0 em(4) em(12);
+
+  @include respond-to(small) {
+    float: none;
+    margin: 0 auto 1.4em;
+  }
+}
+
+// Blog styles
+.post-list {
+  max-width: em(800);
+  margin: 0 auto;
+
+  .entry-header {
+    margin-bottom: 2em;
+  }
+
+  .entry-title {
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: none;
+    margin-bottom: 0;
+    line-height: 1.1;
+
+    a {
+      @include font-size(48);
+      text-decoration: none;
+    }
+  }
+
+  .entry-meta,
+  .entry-meta a {
+    color: $light-gray;
+  }
+
+  .entry-meta a {
+    text-decoration: none;
+  }
+}
+
+.cat-links {
+  margin-right: 1em;
+}
+
+.single-post {
+
+  .entry-header {
+    margin-bottom: 3em;
+  }
+
+  .entry-meta,
+  .entry-meta a {
+    color: $light-gray;
+    text-align: center;
+  }
+
+  .entry-content,
+  .entry-footer,
+  .comments-area {
+    @include center-block;
+    max-width: em(800);
+  }
+
+}
+
+// Default Wordpress content classes
+.sticky {
+  display: block;
+}
+
+.hentry {
+  margin-bottom: 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+  display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+  display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin-bottom: 1.5em;
+}
+
+.page-links {
+  clear: both;
+  margin-bottom: 1.5em;
+}

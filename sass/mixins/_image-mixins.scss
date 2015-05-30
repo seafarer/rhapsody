@@ -1,0 +1,15 @@
+// SVG background images with PNG fallback
+
+$image-path: 'images' !default;
+$fallback-ext: 'png' !default;
+
+@mixin svg-image($name, $size:false){
+  background-image: url(#{$image-path}/#{$name}.svg);
+  @if($size){
+    background-size: $size;
+  }
+
+  .no-svg &{
+    background-image: url(#{$image-path}/#{$name}.#{$fallback-ext});
+  }
+}

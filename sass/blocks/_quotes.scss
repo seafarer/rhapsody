@@ -1,0 +1,34 @@
+
+.quote-container {
+  width: 100%;
+  margin: em(60) auto;
+  text-align: center;
+
+  @include respond-to(large) {
+    margin-top: em(40);
+  }
+}
+
+.quote-author {
+  display: block;
+}
+
+.quote {
+  @include font-size(28);
+  max-width: em(360);
+  margin: 0 auto;
+  text-align: center;
+  color: $light-gray;
+  font-weight: 300;
+
+  @include respond-to(small) {
+    max-width: 300px;
+  }
+}
+
+.citation {
+  display: block;
+  text-transform: uppercase;
+  @include font-size(24);
+  text-align: right;
+}

@@ -1,0 +1,67 @@
+
+.site-footer {
+  background: $black;
+  padding: 1.5em 0;
+  border-top: 1px solid #666;
+  @include clearfix;
+}
+
+.site-info {
+  float: left;
+  width: 10%;
+
+  a {
+    @include hide-text();
+    @include svg-image('rmc-logo', 80px 31px);
+    width: 80px;
+    height: 31px;
+  }
+
+  @include respond-to(medium) {
+    float: none;
+    width: 100%;
+    margin-bottom: 1em;
+
+    a {
+      margin: 1em auto;
+    }
+  }
+}
+
+.footer-nav {
+  float: left;
+  width: 60%;
+
+  @include respond-to(large) {
+    width: 60%;
+  }
+
+  @include respond-to(medium) {
+    float: none;
+    width: 100%;
+    margin: 1em auto;
+  }
+
+  .menu-footer-menu {
+    text-align: right;
+
+    @include respond-to(medium) {
+      text-align: center;
+    }
+  }
+}
+
+.copyright {
+  @include font-size(14);
+  text-align: right;
+  float: right;
+
+  @include respond-to(medium) {
+    padding: em(8) 0;
+  }
+  
+  @include respond-to(medium) {
+    width: 100%;
+    text-align: center;
+  }
+}
