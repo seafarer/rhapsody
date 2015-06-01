@@ -1,10 +1,10 @@
 @charset "UTF-8";
 /*
 Theme Name: rhapsody
-Theme URI: http://underscores.me/
-Author: Bluetent
-Author URI: http://bluetent.com
-Description: A custom theme for RMC
+Theme URI: http://ecstatic.media/rhapsody
+Author: Colin OBrien
+Author URI: http://ecstatic.media
+Description: Base theme for WordPress
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-rhapsody is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Rhapsody is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
@@ -48,6 +48,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 1.0 Normalize
 --------------------------------------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic);
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
