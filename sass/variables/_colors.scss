@@ -1,0 +1,89 @@
+//Color variables, functions and mixins
+
+$colors: (
+  red: #ff4136,
+  blue: #3972A3,
+  yellow: #ffdc00,
+  orange: #ff851b,
+  purple: #7154AD,
+  gray: mix(black, white, 50%)
+);
+
+$variations: (
+  light: (
+    function: tint,
+    parameters: 15%
+  ),
+  dark: (
+    function: shade,
+    parameters: 10%
+  ),
+  fade: (
+    function: rgba,
+    parameters: .7
+  ),
+  gray: (
+    function: grayscale
+  )
+);
+
+@function color-variation($color, $variation: false) {
+
+  // Correctly set $color variable:
+  @if map-has-key($colors, $color) {
+    // $color is in $colors, set variable = map-value
+    $color: map-get($colors, $color);
+  } @else {
+    @if type-of($color) != color {
+      // $color is not in $color and $color is not a color
+      @error "Invalid color name: `#{$color}`.";
+    }
+    // $color is a valid color - use it
+  }
+
+  @if $variation {
+    @if not map-has-key($variations, $variation) {
+      // variation is not in $variations
+      @error "Invalid $variation: `#{$variation}`.";
+    } @else {
+      // make it easier to deal with nested map
+      $this-variation: map-get($variations, $variation);
+      // $args = $function, $color
+      $args: join(map-get($this-variation, function), $color);
+      @if map-get($this-variation, parameters) {
+        // $args = $function, $colors, $parameters
+        $args: join($args, map-get($this-variation, parameters));
+      }
+      //@return $args;
+      @return call($args...);
+    }
+  }
+  // no $variation, just return $color
+  @return $color;
+}
+
+// Alias function to make typing easier:
+@function palette($color, $variation:false) {
+  @return color-variation($color, $variation);
+}
+
+$color__background-body: #fff;
+$color__background-screen: $color__background-body;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+$color__text-screen: #444;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: palette(blue);
+$color__link-visited: palette(purple);
+$color__link-hover: palette(blue, dark);
+$color__text-main: $color__text-screen;
+
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;

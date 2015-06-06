@@ -11,10 +11,10 @@
 }
 
 label.gfield_label {
-  color: $gold;
+  color: $color__link;
   font-weight: normal !important;
 }
 
 .gform_wrapper .ginput_complex label {
-  color: $light-gray;
+  color: palette(gray);
 }

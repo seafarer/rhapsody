@@ -1,10 +1,9 @@
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
-@import "posts-and-pages";
-@import "header";
-@import "home";
-@import "footer";
-@import "landing-pages";
-@import "featured-grid";
-@import "parallax";
+@import "structure";
+@import 'posts-and-pages';
+@import 'header';
+@import 'home';
+@import 'footer';
+@import 'sidebar';

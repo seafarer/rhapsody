@@ -1,141 +1,53 @@
 // Menu
-// Copyright (c) David Bushell | http://dbushell.com/
+var classie = window.classie;
+var $, jQuery = window.jQuery;
 
-(function (window, document, undefined) {
+var SidebarMenuEffects = (function() {
 
-  // helper functions
+  'use strict';
 
-  var trim = function (str) {
-    return str.trim ? str.trim() : str.replace(/^\s+|\s+$/g, '');
-  };
-
-  var hasClass = function (el, cn) {
-    return (' ' + el.className + ' ').indexOf(' ' + cn + ' ') !== -1;
-  };
-
-  var addClass = function (el, cn) {
-    if (!hasClass(el, cn)) {
-      el.className = (el.className === '') ? cn : el.className + ' ' + cn;
+  function hasParentClass( e, classname ) {
+    if(e === document) {
+      return false;
     }
-  };
-
-  var removeClass = function (el, cn) {
-    el.className = trim((' ' + el.className + ' ').replace(' ' + cn + ' ', ' '));
-  };
-
-  var hasParent = function (el, id) {
-    if (el) {
-      do {
-        if (el.id === id) {
-          return true;
-        }
-        if (el.nodeType === 9) {
-          break;
-        }
-      }
-      while ((el = el.parentNode));
+    if( classie.has( e, classname ) ) {
+      console.log(classname);
+      return true;
     }
-    return false;
-  };
-
-  // normalize vendor prefixes
-
-  var doc = document.documentElement;
-
-  var transform_prop = window.Modernizr.prefixed('transform'),
-    transition_prop = window.Modernizr.prefixed('transition'),
-    transition_end = (function () {
-      var props = {
-        'WebkitTransition': 'webkitTransitionEnd',
-        'MozTransition': 'transitionend',
-        'OTransition': 'oTransitionEnd otransitionend',
-        'msTransition': 'MSTransitionEnd',
-        'transition': 'transitionend'
-      };
-      return props.hasOwnProperty(transition_prop) ? props[transition_prop] : false;
-    })();
-
-  window.App = (function () {
-
-    var _init = false, app = {};
-
-    var inner = document.querySelector('.inner-page'),
-
-      nav_open = false,
-
-      nav_class = 'js-nav';
-
-
-    app.init = function () {
-      if (_init) {
-        return;
-      }
-      _init = true;
-
-      var closeNavEnd = function (e) {
-        if (e && e.target === inner) {
-          document.removeEventListener(transition_end, closeNavEnd, false);
-        }
-        nav_open = false;
-      };
-
-      app.closeNav = function () {
-        if (nav_open) {
-          // close navigation after transition or immediately
-          var duration = (transition_end && transition_prop) ? parseFloat(window.getComputedStyle(inner, '')[transition_prop + 'Duration']) : 0;
-          if (duration > 0) {
-            document.addEventListener(transition_end, closeNavEnd, false);
-          } else {
-            closeNavEnd(null);
-          }
-        }
-        removeClass(doc, nav_class);
-      };
-
-      app.openNav = function () {
-        if (nav_open) {
-          return;
-        }
-        addClass(doc, nav_class);
-        nav_open = true;
-      };
-
-      app.toggleNav = function (e) {
-        if (nav_open && hasClass(doc, nav_class)) {
-          app.closeNav();
-        } else {
-          app.openNav();
-        }
-        if (e) {
-          e.preventDefault();
-        }
-      };
-
-      // open nav with main "nav" button
-      document.getElementById('nav-open-btn').addEventListener('click', app.toggleNav, false);
-
-      // close nav with main "close" button
-      document.getElementById('nav-close-btn').addEventListener('click', app.toggleNav, false);
-
-      // close nav by touching the partial off-screen content
-      document.addEventListener('click', function (e) {
-          if (nav_open && !hasParent(e.target, 'site-navigation')) {
-            e.preventDefault();
-            app.closeNav();
-          }
-        },
-        true);
-
-      addClass(doc, 'js-ready');
-
-    };
-
-    return app;
-
-  })();
-
-  if (window.addEventListener) {
-    window.addEventListener('DOMContentLoaded', window.App.init, false);
+    return e.parentNode && hasParentClass( e.parentNode, classname );
   }
 
-})(window, window.document);
+  // http://coveroverflow.com/a/11381730/989439
+  function mobilecheck() {
+    var check = false;
+    (function(a){if(/(android|ipad|playbook|silk|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+    return check;
+  }
+
+  function init() {
+
+    var
+      container = document.getElementById( 'page' ),
+      button = document.getElementById( 'nav-open' ),
+      eventtype = mobilecheck() ? 'touchstart' : 'click';
+
+
+    button.addEventListener( eventtype, function( ev ) {
+      ev.stopPropagation();
+      ev.preventDefault();
+      container.className = 'hfeed site js-ready'; // clear
+      setTimeout( function() {
+        classie.add( container, 'js-nav' );
+      }, 25 );
+    });
+
+    classie.add(container, 'js-ready');
+
+    $('#nav-close-btn, #inner-page').on( eventtype, function() {
+      classie.remove(container, 'js-nav');
+    });
+  }
+
+  init();
+
+})();

@@ -6,33 +6,16 @@
  *
  * @package rhapsody
  */
+
 ?>
 
-    </div><!-- #content -->
+	</div><!-- #content -->
 
-    <footer id="colophon" class="site-footer" role="contentinfo">
-      <div class="row">
-        <div class="site-info">
-          <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-            <?php bloginfo('name'); ?>
-          </a>
-        </div>
-        <div class="social-links">
-          <ul class="inline">
-            <li><a class="facebook" href="https://www.facebook.com/RMCYourDestinationConnection" target="_blank"><span class="icon-facebook"></span>Facebook</a></li>
-            <li><a class="twitter" href="https://twitter.com/Rockymtncon" target="_blank"><span class="icon-twitter"></span>Twitter</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-nav">
-          <?php wp_nav_menu(array('theme_location'  => 'footer',
-                                  'container' => 'false',
-          )); ?>
-        </div>
-        <div class="copyright">&copy; <?php print the_date('Y'); ?></div>
-      </div>
-    </footer><!-- #colophon -->
-  </div><!-- .inner-page -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<?php printf( esc_html__( 'Cabana theme by %2$s.', 'rhapsody' ), 'rhapsody', '<a href="http://www.bluetent.com/" rel="designer">Bluetent</a>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

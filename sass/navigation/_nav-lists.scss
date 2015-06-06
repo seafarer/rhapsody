@@ -18,14 +18,14 @@ ul.nav-list {
       text-decoration: none;
 
       &:hover {
-        color: $gold;
+        color: $color__link;
       }
     }
 
     &.current_page_item {
 
       a {
-        color: $gold;
+        color: $color__link;
       }
     }
   }

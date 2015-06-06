@@ -1,39 +1,32 @@
-h1 {
-  margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
-  font-style: normal;
-}
-
-h2, h3, h4, h5, h6 {
+  line-height: 1.075;
   margin: 0 0 em(12);
-  font-weight: 600;
-
 }
 
 h1 {
-  @include font-size(60);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-
-  @include respond-to(medium) {
-    @include font-size(48);
-  }
+  @include font-size(48);
 
   @include respond-to(small) {
     @include font-size(36);
   }
 }
 
+.sidebar h1 {
+  @include font-size(28);
+}
+
 .site-title {
   @include font-size(16);
-
-  @include respond-to(large) {
-    display: none;
-  }
 }
 
 .page-title,
 .entry-title {
-  text-align: center;
   margin-bottom: 0.5em;
+  text-align: left;
 }

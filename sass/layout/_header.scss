@@ -1,58 +1,44 @@
 // Header styles
-.site-header {
-  background: $black;
-  width: 100%;
-  z-index: 10;
-  backface-visibility: hidden;
-  position: relative;
+#masthead {
+  @include span-columns(4);
+  padding: 0.5em 0;
 
-  &.stuck {
-    top: 0;
-    bottom: auto;
-    position: fixed;
+  @include respond-to(medium) {
+    @include span-columns(9);
+
   }
 }
 
-.header-row {
-  @include container();
+.site-logo {
+  vertical-align: middle;
 
-  @include respond-to(large) {
-    padding: 0;
-    position: relative;
-    width: auto;
-    margin-left: 0;
-    margin-right: 0;
+  @include respond-to(medium) {
+    width: em(100);
   }
-}
-
-.site-branding {
-  @include clearfix();
-  float: left;
-  width: 25%;
 }
 
 .site-title {
-  margin: em(16) 0;
+  @include font-size(30);
+  display: inline-block;
+  font-weight: 300;
+  margin-bottom: 0;
 
-  a {
-    @include hide-text();
-    @include svg-image('rmc-logo', 100px 39px);
-    width: 100px;
-    height: 39px;
+  @include respond-to(medium) {
+    @include font-size(20);
   }
 }
 
-.mobile-header {
-  background: $black;
-  width: 100%;
-  padding: em(6);
+.site-description {
+  @include visuallyhidden();
+}
 
-  @include respond-to(large-up) {
-    display: none;
+@include respond-to(medium-up) {
+
+  .main-navigation {
+    @include span-columns(8);
+    @include omega();
   }
 }
 
-.mobile-logo {
-  margin: em(4) 0 0;
-  display: block;
-}
+
+
