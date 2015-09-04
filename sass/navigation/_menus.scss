@@ -10,9 +10,8 @@
 
     > a {
       display: block;
-      color: palette(blue);
-      font-size: em(15);
-      font-weight: bold;
+      color: #fff;
+      font-size: em(16);
       text-transform: uppercase;
       line-height: 1;
       outline: none;
@@ -31,14 +30,35 @@
 
 #nav-open {
   display: block;
-  float: left;
-  margin: em(10) em(10) 0 0;
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }
 
 #close-btn {
   position: absolute;
   top: em(6);
   left: em(10);
+}
+
+.nav-btn {
+  background: none;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    background: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  span {
+    color: palette(blue);
+    font-size: 24px;
+  }
 }
 
 @include respond-to(large-up) {
@@ -53,17 +73,16 @@
   }
 
   .main-navigation {
-    margin-top: em(48);
 
     ul {
       list-style: none;
       margin: 0;
       padding-left: 0;
-      text-align: right;
+      text-align: center;
 
       li {
         display: inline-block;
-        padding: 0 em(20) 0 0;
+        padding: 0;
         position: relative;
 
         li {
@@ -73,8 +92,13 @@
 
       a {
         display: block;
-        padding: em(8) 0;
+        padding: em(12) em(20);
         text-decoration: none;
+
+        &:hover {
+          background: palette(blue, dark);
+          color: #fff;
+        }
       }
 
       ul {
@@ -121,8 +145,7 @@
   }
 
   li.current-menu-item a {
-    color: $color__text-main;
-    border-bottom: 3px solid tint(palette(gray), 50%);
+    color: #fff;
   }
 
   .main-navigation ul ul li {
@@ -195,9 +218,15 @@
       }
 
       a {
+        color: palette(blue);
         padding: em(16) em(20);
         font-weight: bold;
         border-bottom: none;
+
+        &:hover {
+          color: #fff;
+          background: palette(blue);
+        }
       }
 
       .sub-menu {

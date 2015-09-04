@@ -2,16 +2,13 @@
 var classie = window.classie;
 var $, jQuery = window.jQuery;
 
-var SidebarMenuEffects = (function() {
+$(function() {
 
   'use strict';
 
   function hasParentClass( e, classname ) {
-    if(e === document) {
-      return false;
-    }
+    if(e === document) return false;
     if( classie.has( e, classname ) ) {
-      console.log(classname);
       return true;
     }
     return e.parentNode && hasParentClass( e.parentNode, classname );
@@ -28,26 +25,50 @@ var SidebarMenuEffects = (function() {
 
     var
       container = document.getElementById( 'page' ),
+      content = document.getElementById( 'content'),
+      reset = document.getElementById( 'nav-close' ),
       button = document.getElementById( 'nav-open' ),
-      eventtype = mobilecheck() ? 'touchstart' : 'click';
+      eventtype = mobilecheck() ? 'touchstart' : 'click',
+      resetMenu = function() {
+        classie.remove( container, 'js-nav' );
+        classie.remove( content, 'menu-open' );
+      },
+      bodyClickFn = function(evt) {
+        if( hasParentClass( evt.target, 'menu-open' ) ) {
+          resetMenu();
+          document.removeEventListener( eventtype, bodyClickFn );
+        }
+      },
+      resetClickFn = function(evt) {
+        if (evt.target === reset) {
+          resetMenu();
+          document.removeEventListener(eventtype, bodyClickFn);
+        }
+      };
 
+    classie.add(container, 'js-ready');
 
     button.addEventListener( eventtype, function( ev ) {
       ev.stopPropagation();
       ev.preventDefault();
-      container.className = 'hfeed site js-ready'; // clear
-      setTimeout( function() {
-        classie.add( container, 'js-nav' );
-      }, 25 );
+      //container.className = 'hfeed site js-ready'; // clear
+      if(classie.hasClass(container, 'js-nav')) {
+        setTimeout( function() {
+          classie.remove( container, 'js-nav' );
+          classie.remove( container, 'menu-open');
+        }, 25 );
+      } else {
+        setTimeout( function() {
+          classie.add( container, 'js-nav' );
+          classie.add( container, 'menu-open');
+        }, 25 );
+      }
+      document.addEventListener( eventtype, bodyClickFn );
+      document.addEventListener( eventtype, resetClickFn );
     });
 
-    classie.add(container, 'js-ready');
-
-    $('#nav-close-btn, #inner-page').on( eventtype, function() {
-      classie.remove(container, 'js-nav');
-    });
   }
 
   init();
 
-})();
+}(jQuery));

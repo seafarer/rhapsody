@@ -13,7 +13,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<?php printf( esc_html__( 'Cabana theme by %2$s.', 'rhapsody' ), 'rhapsody', '<a href="http://www.bluetent.com/" rel="designer">Bluetent</a>' ); ?>
+      <div class="copyright">
+        &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>
+      </div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

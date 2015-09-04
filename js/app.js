@@ -34,6 +34,16 @@ $(function() {
     };
   }
 
+
+
+  $('#hero-slider').slippry({
+    transition: 'horizontal',
+    pause: 7000,
+    onSliderLoad: function() {
+      $('#hero-slider').css({'opacity': 1});
+    }
+  });
+
 }(jQuery));
 
 

@@ -1,4 +1,45 @@
-// Source Sans Pro
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic);
+// Bitter
 
+@font-face {
+  font-family: 'bitter';
+  src: url('fonts/bitter/bitter-bold.eot');
+  src: url('fonts/bitter/bitter-bold.eot?#iefix') format('embedded-opentype'),
+  url('fonts/bitter/bitter-bold.woff2') format('woff2'),
+  url('fonts/bitter/bitter-bold.woff') format('woff'),
+  url('fonts/bitter/bitter-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'bitter';
+  src: url('fonts/bitter/bitter-bolditalic.eot');
+  src: url('fonts/bitter/bitter-bolditalic.eot?#iefix') format('embedded-opentype'),
+  url('fonts/bitter/bitter-bolditalic.woff2') format('woff2'),
+  url('fonts/bitter/bitter-bolditalic.woff') format('woff'),
+  url('fonts/bitter/bitter-bolditalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'bitter';
+  src: url('fonts/bitter/bitter-italic.eot');
+  src: url('fonts/bitter/bitter-italic.eot?#iefix') format('embedded-opentype'),
+  url('fonts/bitter/bitter-italic.woff2') format('woff2'),
+  url('fonts/bitter/bitter-italic.woff') format('woff'),
+  url('fonts/bitter/bitter-italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'bitter';
+  src: url('fonts/bitter/bitter-regular.eot');
+  src: url('fonts/bitter/bitter-regular.eot?#iefix') format('embedded-opentype'),
+  url('fonts/bitter/bitter-regular.woff2') format('woff2'),
+  url('fonts/bitter/bitter-regular.woff') format('woff'),
+  url('fonts/bitter/bitter-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

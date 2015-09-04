@@ -1,9 +1,8 @@
 /**
  * Front end tasks.
+ *
  */
-
 var gulp          = require('gulp');
-var gutil         = require('gulp-util');
 var plumber       = require('gulp-plumber');
 var sass          = require('gulp-sass');
 var sourcemap     = require('gulp-sourcemaps');
@@ -13,7 +12,6 @@ var notify        = require('gulp-notify');
 var changed       = require('gulp-changed');
 var iconfont      = require('gulp-iconfont');
 var consolidate   = require('gulp-consolidate');
-var svgmin        = require('gulp-svgmin');
 var cache         = require('gulp-cache');
 var imagemin      = require('gulp-imagemin');
 

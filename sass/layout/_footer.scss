@@ -1,1 +1,28 @@
+#colophon {
+  background: palette(blue);
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
 
+.site-info {
+  @include outer-container();
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.copyright,
+.credits {
+  @include span-columns(6);
+  color: #ccc;
+
+  @include respond-to(small) {
+    @include span-columns(12);
+  }
+}
+
+.credits {
+
+  a {
+    color: #ccc;
+  }
+}

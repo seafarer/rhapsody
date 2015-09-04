@@ -1,3 +1,15 @@
 // Sidebar Styles
 //
 // Default sidebar width and location set in "layout/_structure.scss" and a variable is provided in "variables/_grid-settings.scss"
+
+.sidebar {
+  padding-left: 2em;
+
+  @include respond-to(medium) {
+    padding-left: 0;
+  }
+
+  .entry-meta {
+    margin-bottom: 1em;
+  }
+}

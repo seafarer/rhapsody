@@ -4,13 +4,27 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
   line-height: 1.075;
-  margin: 0 0 em(12);
+  margin: 0 0 12px;
+}
+
+h1,
+h2 {
+  font-family: $font__header;
+  font-weight: 400;
+}
+
+h3 {
+  @include font-size(20);
+  font-family: $font__header;
+
+  .sidebar & {
+    margin-bottom: 0;
+  }
 }
 
 h1 {
-  @include font-size(48);
+  @include font-size(40);
 
   @include respond-to(small) {
     @include font-size(36);
@@ -27,6 +41,7 @@ h1 {
 
 .page-title,
 .entry-title {
+  color: palette(gray);
   margin-bottom: 0.5em;
   text-align: left;
 }

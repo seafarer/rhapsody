@@ -1,19 +1,24 @@
 // Header styles
 #masthead {
-  @include span-columns(4);
-  padding: 0.5em 0;
+  @include span-columns(12);
+  padding: 1.5em 0 0.5em;
 
   @include respond-to(medium) {
-    @include span-columns(9);
-
+    @include span-columns(12);
+    padding-top: 1em;
   }
+}
+
+.site-header {
+  border-bottom: 1px solid palette(gray);
 }
 
 .site-logo {
   vertical-align: middle;
+  @include span-columns(4);
 
   @include respond-to(medium) {
-    width: em(100);
+    @include span-columns(12);
   }
 }
 
@@ -28,15 +33,37 @@
   }
 }
 
+
 .site-description {
-  @include visuallyhidden();
+  @include span-columns(8);
+  @include font-size(28);
+  color: palette(blue);
+  font-weight: 400;
+  padding: 48px 0 0;
+  text-align: right;
+  text-transform: capitalize;
+
+  @include respond-to(small) {
+    @include span-columns(12);
+    @include font-size(20);
+    padding-top: 1em;
+    text-align: center;
+  }
+}
+
+.navigation-bar {
+  @include clearfix;
+  background: palette(blue);
 }
 
 @include respond-to(medium-up) {
-
   .main-navigation {
-    @include span-columns(8);
-    @include omega();
+    @include outer-container();
+  }
+
+  .menu,
+  .main-menu {
+    @include span-columns(12);
   }
 }
 

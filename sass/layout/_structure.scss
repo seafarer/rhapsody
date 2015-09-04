@@ -2,11 +2,17 @@
 
 .row {
   @include outer-container();
+  padding-left: em(15);
+  padding-right: em(15);
 }
 
-.site-header {
-  border-bottom: 1px solid palette(gray);
-  margin-bottom: 2em;
+#content {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.hero {
+  margin-bottom: em(30);
 }
 
 // Settings for sidebar and content area widths
