@@ -34,15 +34,24 @@ $(function() {
     };
   }
 
-
-
-  $('#hero-slider').slippry({
-    transition: 'horizontal',
-    pause: 7000,
+  var homeSlider = $('#hero-slider').bxSlider({
+    auto: true,
+    easing: 'ease-in-out',
+    mode: 'fade',
+    pager: false,
+    pause: 6000,
+    speed: 800,
     onSliderLoad: function() {
-      $('#hero-slider').css({'opacity': 1});
+      $('.bkgd-slider').css({'opacity': 1});
     }
   });
+
+  $(window).on(orientationEvent,  debounce(function() {
+
+    if (homeSlider.length) {
+      homeSlider.reloadSlider();
+    }
+  }, 250)).trigger(orientationEvent);
 
 }(jQuery));
 

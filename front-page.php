@@ -20,7 +20,7 @@ if ($images): ?>
     <ul id="hero-slider">
       <?php foreach ($images as $image): ?>
         <li>
-          <img src="<?php echo $image['sizes']['hero']; ?>" alt="<?php echo $image['alt']; ?>"/>
+          <img src="<?php echo $image['sizes']['banner_full']; ?>" alt="<?php echo $image['alt']; ?>"/>
         </li>
       <?php endforeach; ?>
     </ul>
