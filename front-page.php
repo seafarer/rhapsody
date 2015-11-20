@@ -42,7 +42,7 @@ if ($images): ?>
   <div id="secondary" class="sidebar">
 
     <div class="block-3 block">
-      <h2>WOD!</h2>
+      <h2>Recent Blog Posts</h2>
 
       <?php
       $args = array('numberposts' => '3');
