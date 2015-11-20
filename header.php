@@ -35,7 +35,7 @@
       <header id="masthead" role="banner">
         <div class="site-branding">
           <button class="nav-btn" id="nav-open"><span class="icon-bars"></span></button>
-          <a href="/"><img class="site-logo" src="<?php bloginfo('template_url'); ?>/images/rhapsody-logo.svg" alt="logo"  onerror="this.onerror=null; this.src='<?php bloginfo('template_url'); ?>/images/rhapsody-logo.png'"></a>
+          <a href="/"><img class="site-logo" src="<?php bloginfo('template_url'); ?>/images/logo.svg" alt="logo"  onerror="this.onerror=null; this.src='<?php bloginfo('template_url'); ?>/images/logo.png'"></a>
           <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
         </div>
       </header><!-- #masthead -->
