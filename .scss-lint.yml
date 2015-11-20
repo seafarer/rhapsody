@@ -52,7 +52,7 @@ linters:
   SpaceAfterComma:
     enabled: true
   SpaceAfterPropertyColon:
-    enabled: truw
+    enabled: true
   SpaceBeforeBrace:
     enabled: true
   SpaceBetweenParens:
