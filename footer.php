@@ -18,6 +18,7 @@
       </div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+</div><!-- #inner page -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
