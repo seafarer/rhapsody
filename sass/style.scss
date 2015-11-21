@@ -46,9 +46,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic);
 @import "mixins/mixins";
-@import "straight-up/straight-up-helpers";
-@import 'straight-up/straight-up';
 @import "variables/grid-settings";
+@import 'straight-up/straight-up';
 @import "variables/variables";
 /*--------------------------------------------------------------
 1.0 Normalize

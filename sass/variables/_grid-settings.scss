@@ -10,3 +10,21 @@ $tablet: new-breakpoint(max-width 768px 8);
 $mobile: new-breakpoint(max-width 480px 4);
 
 $sidebar: right !default;
+
+$small-screen: 480px;
+$medium-screen: 768px;
+$large-screen: 960px;
+$huge-screen: 1232px;
+
+$breakpoints: (
+  'small': ( max-width: $small-screen ),
+  'small-up': ( min-width: $small-screen ),
+  'medium': ( max-width: $medium-screen ),
+  'medium-up': ( min-width: $medium-screen ),
+  'large': ( max-width: $large-screen ),
+  'large-up': ( min-width: $large-screen ),
+  'huge': ( max-width: $huge-screen ),
+  'short': ( max-height: 800px ),
+  'tall': ( min-height: 801px )
+);
+
