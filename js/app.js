@@ -1,5 +1,5 @@
 /**
- * JS for RMC
+ * JS for Rhapsody
  */
 
 var $, jQuery = window.jQuery;
