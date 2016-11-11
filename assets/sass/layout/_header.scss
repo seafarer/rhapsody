@@ -1,10 +1,10 @@
 // Header styles
 #masthead {
-  @include span-columns(12);
+  @include span(12);
   padding: 1.5em 0 0.5em;
 
   @include mq($max, $medium) {
-    @include span-columns(12);
+    @include span(12);
     padding-top: 1em;
   }
 }
@@ -15,10 +15,10 @@
 
 .site-logo {
   vertical-align: middle;
-  @include span-columns(4);
+  @include span(4);
 
   @include mq($max, $medium) {
-    @include span-columns(12);
+    @include span(12);
   }
 }
 
@@ -35,7 +35,7 @@
 
 
 .site-description {
-  @include span-columns(8);
+  @include span(8);
   @include font-size(28);
   color: palette(blue);
   font-weight: 400;
@@ -44,7 +44,7 @@
   text-transform: capitalize;
 
   @include mq($max, $small) {
-    @include span-columns(12);
+    @include span(12);
     @include font-size(20);
     padding-top: 1em;
     text-align: center;
@@ -58,12 +58,12 @@
 
 @include mq($min, $medium-up) {
   .main-navigation {
-    @include outer-container();
+    @include container();
   }
 
   .menu,
   .main-menu {
-    @include span-columns(12);
+    @include span(12);
   }
 }
 

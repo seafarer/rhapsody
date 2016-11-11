@@ -17,6 +17,7 @@ Rhapsody is loosely based on Underscores http://underscores.me/, (C) 2012-2015 A
 /*--------------------------------------------------------------
 1.0 Core
 --------------------------------------------------------------*/
+@import "../../node_modules/susy/sass/susy";
 @import "typography/fonts";
 @import "base/mixins/mixins";
 @import "base/variables/grid-settings";
@@ -65,6 +66,4 @@ Rhapsody is loosely based on Underscores http://underscores.me/, (C) 2012-2015 A
 @import "components/buttons";
 @import "components/infinite-scroll";
 @import "components/ninjaforms";
-@import "components/quotes";
 @import "components/widgets";
-

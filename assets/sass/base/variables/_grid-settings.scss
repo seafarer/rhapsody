@@ -1,4 +1,21 @@
 
+// Susy Settings //
+
+$susy: (
+  columns: 12,
+  gutters: .25,
+  global-box-sizing: border-box,
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+// Breakpoints
+
 $viewport-increment: 1px;
 
 $xxl: 1440px;
@@ -15,3 +32,7 @@ $medium-up: $medium + $viewport-increment;
 
 $small: 568px;
 $small-up: $small + $viewport-increment;
+
+// Structure
+
+$sidebar: false;

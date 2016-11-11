@@ -1,7 +1,7 @@
 // Overall page structure
 
 .row {
-  @include outer-container();
+  @include container();
   padding-left: em(15);
   padding-right: em(15);
 }
@@ -17,22 +17,21 @@
 
 // Settings for sidebar and content area widths
 // and sidebar location. Variable set in "variables/_grid-settings.scss"
-
 @if $sidebar == right {
 
   .content-area {
-    @include span-columns(8);
+    @include span(8);
 
     @include mq($max, $medium) {
-      @include span-columns(12)
+      @include span(12)
     }
   }
 
   .sidebar {
-    @include span-columns(4);
+    @include span(4);
 
     @include mq($max, $medium) {
-      @include span-columns(12)
+      @include span(12)
     }
   }
 }
@@ -40,28 +39,28 @@
 @else if $sidebar == left {
 
   .content-area {
-    @include span-columns(8);
-    @include shift(4);
+    @include span(8);
+    @include pre(4);
 
     @include mq($max, $medium) {
-      @include span-columns(12);
-      @include shift(0);
+      @include span(12);
+      @include pre(0);
     }
   }
   .sidebar {
-    @include span-columns(4);
-    @include shift(-12);
+    @include span(4);
+    @include pull(-12);
 
     @include mq($max, $medium) {
-      @include span-columns(12);
-      @include shift(0);
+      @include span(12);
+      @include pull(0);
     }
   }
 }
 
 @else {
   .content-area {
-    @include span-columns(12);
+    @include span(12);
   }
 }
 

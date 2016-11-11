@@ -1,44 +1,44 @@
 
 .column-row {
-  @include outer-container(100%);
+  @include container();
 }
 
 .column {
 
   &.half {
-    @include span-columns(6)
+    @include span(6)
   }
 
   &.third {
-    @include span-columns(4);
+    @include span(4);
   }
 
   &.fourth {
-    @include span-columns(3);
+    @include span(3);
   }
 
   &.fifth {
-    @include span-columns(2 of 10);
+    @include span(2 of 10);
   }
 
   &.sixth {
-    @include span-columns(2);
+    @include span(2);
   }
 
   &.two-thirds {
-    @include span-columns(8);
+    @include span(8);
   }
 
   &.three-fourths {
-    @include span-columns(9);
+    @include span(9);
   }
 
   &.four-fifths {
-    @include span-columns(8 of 10);
+    @include span(8 of 10);
   }
 
   &.five-sixths {
-    @include span-columns(10);
+    @include span(10);
   }
 
   @include mq($max, $large) {
@@ -51,7 +51,7 @@
     &.three-fourths,
     &.four-fifths,
     &.five-sixths {
-      @include span-columns(12);
+      @include span(12);
     }
 
     margin-bottom: 1em;

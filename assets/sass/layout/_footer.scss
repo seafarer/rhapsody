@@ -5,18 +5,18 @@
 }
 
 .site-info {
-  @include outer-container();
+  @include container();
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .copyright,
 .credits {
-  @include span-columns(6);
+  @include span(6);
   color: #ccc;
 
   @include mq($max, $small) {
-    @include span-columns(12);
+    @include span(12);
   }
 }
 
