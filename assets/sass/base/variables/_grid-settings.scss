@@ -1,0 +1,17 @@
+
+$viewport-increment: 1px;
+
+$xxl: 1440px;
+$xxl-up: $xxl + $viewport-increment;
+
+$xl: 1200px;
+$xl-up: $xl + $viewport-increment;
+
+$large: 1024px;
+$large-up: $large + $viewport-increment;
+
+$medium: 768px;
+$medium-up: $medium + $viewport-increment;
+
+$small: 568px;
+$small-up: $small + $viewport-increment;

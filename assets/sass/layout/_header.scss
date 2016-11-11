@@ -1,0 +1,71 @@
+// Header styles
+#masthead {
+  @include span-columns(12);
+  padding: 1.5em 0 0.5em;
+
+  @include mq($max, $medium) {
+    @include span-columns(12);
+    padding-top: 1em;
+  }
+}
+
+.site-header {
+  border-bottom: 1px solid palette(gray);
+}
+
+.site-logo {
+  vertical-align: middle;
+  @include span-columns(4);
+
+  @include mq($max, $medium) {
+    @include span-columns(12);
+  }
+}
+
+.site-title {
+  @include font-size(30);
+  display: inline-block;
+  font-weight: 300;
+  margin-bottom: 0;
+
+  @include mq($max, $medium) {
+    @include font-size(20);
+  }
+}
+
+
+.site-description {
+  @include span-columns(8);
+  @include font-size(28);
+  color: palette(blue);
+  font-weight: 400;
+  padding: 48px 0 0;
+  text-align: right;
+  text-transform: capitalize;
+
+  @include mq($max, $small) {
+    @include span-columns(12);
+    @include font-size(20);
+    padding-top: 1em;
+    text-align: center;
+  }
+}
+
+.navigation-bar {
+  @include clearfix;
+  background: palette(blue);
+}
+
+@include mq($min, $medium-up) {
+  .main-navigation {
+    @include outer-container();
+  }
+
+  .menu,
+  .main-menu {
+    @include span-columns(12);
+  }
+}
+
+
+

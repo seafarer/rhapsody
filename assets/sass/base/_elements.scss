@@ -1,0 +1,107 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  line-height: 1;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  @include font-size(16);
+  font-family: $font__main;
+  line-height: $font__line-height-body;
+}
+
+body {
+  color: $color__text-main;
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+blockquote,
+q {
+  quotes: "" "";
+
+  &:before,
+  &:after {
+    content: "";
+  }
+}
+
+hr {
+  background-color: $color__background-hr;
+  border: 0;
+  box-sizing: content-box;
+  height: 0;
+  margin-bottom: 1.5em;
+}
+
+iframe {
+  border: 0;
+}
+
+main,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure {
+  display: block;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+figure {
+  margin: 0;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}

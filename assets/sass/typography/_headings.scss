@@ -1,0 +1,47 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.075;
+  margin: 0 0 12px;
+}
+
+h1,
+h2 {
+  font-family: $font__header;
+  font-weight: 400;
+}
+
+h3 {
+  @include font-size(20);
+  font-family: $font__header;
+
+  .sidebar & {
+    margin-bottom: 0;
+  }
+}
+
+h1 {
+  @include font-size(40);
+
+  @include mq($max, $small) {
+    @include font-size(36);
+  }
+}
+
+.sidebar h1 {
+  @include font-size(28);
+}
+
+.site-title {
+  @include font-size(16);
+}
+
+.page-title,
+.entry-title {
+  color: palette(gray);
+  margin-bottom: 0.5em;
+  text-align: left;
+}

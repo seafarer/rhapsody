@@ -1,0 +1,70 @@
+/*
+Theme Name: Rhapsody
+Theme URI: https://www.github.com/seafarer/rhapsody
+Author: Colin OBrien
+Author URI: https://www/develody.io
+Description: A custom starter theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: rhapsody
+Tags: starter, spare, minimal, gulp, elixir, sass, yo, yeoman
+
+This is a starter theme for building something custom
+
+Rhapsody is loosely based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+
+/*--------------------------------------------------------------
+1.0 Core
+--------------------------------------------------------------*/
+@import "typography/fonts";
+@import "base/mixins/mixins";
+@import "base/variables/grid-settings";
+@import "base/variables/variables";
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+@import "typography/copy";
+@import "typography/headings";
+/*--------------------------------------------------------------
+3.0 Base
+--------------------------------------------------------------*/
+@import "base/elements";
+@import "base/forms";
+@import "base/links";
+@import "base/lists";
+@import "base/tables";
+/*--------------------------------------------------------------
+4.0 Layout
+--------------------------------------------------------------*/
+@import "layout/structure";
+@import "layout/columns";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/home";
+@import "layout/posts-and-pages";
+@import "layout/sidebar";
+/*--------------------------------------------------------------
+5.0 Media
+--------------------------------------------------------------*/
+@import "media/media";
+@import "media/galleries";
+@import "media/captions";
+/*--------------------------------------------------------------
+6.0 Navigation
+--------------------------------------------------------------*/
+@import "navigation/list-navigation";
+@import "navigation/menus";
+@import "navigation/post-navigation";
+/*--------------------------------------------------------------
+7.0 Components
+--------------------------------------------------------------*/
+@import "components/accessibility";
+@import "components/alignments";
+@import "components/asides";
+@import "components/buttons";
+@import "components/infinite-scroll";
+@import "components/ninjaforms";
+@import "components/quotes";
+@import "components/widgets";
+
