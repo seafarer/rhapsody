@@ -16,9 +16,7 @@ get_header(); ?>
 	<main id="primary" class="primary">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-				Shizzle!
 				<?php get_template_part( 'templates/content', 'page' ); ?>
-
 			<?php endwhile; // End of the loop. ?>
 
 	</main><!-- #main -->
