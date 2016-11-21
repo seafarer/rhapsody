@@ -22,9 +22,10 @@ elixir(function (mix) {
   mix.browserSync({
     proxy: 'rhapsody.loc',
     files: [
-      './**/*.php',
+      './*.php',
+      './templates/*.php',
       elixir.config.assetsPath + 'js/**/*.js',
-      './**/*.css',
+      './*.css',
     ],
     port: 4000
   });
