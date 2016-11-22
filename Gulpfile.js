@@ -8,6 +8,7 @@ var elixir = require('laravel-elixir');
 
 elixir.config.publicPath = '../../../';
 elixir.config.assetsPath = './assets/';
+elixir.config.js.outputFolder = 'app/themes/aew/assets/js'
 elixir.config.css.autoprefix.options = { browsers: ['> 0.25%'] };
 
 elixir(function (mix) {
